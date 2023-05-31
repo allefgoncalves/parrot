@@ -15,13 +15,13 @@ while(cont==1){
 //criaçção das cartas
 
 const imagemcarta = [
-	'./Arquivos Úteis - Projeto 04 - Parrot Card Game/fiestaparrot.gif',
-	'./Arquivos Úteis - Projeto 04 - Parrot Card Game/metalparrot.gif',
-	'./Arquivos Úteis - Projeto 04 - Parrot Card Game/revertitparrot.gif',
-	'./Arquivos Úteis - Projeto 04 - Parrot Card Game/tripletsparrot.gif',
-	'./Arquivos Úteis - Projeto 04 - Parrot Card Game/unicornparrot.gif',
-	'./Arquivos Úteis - Projeto 04 - Parrot Card Game/bobrossparrot.gif',
-	'./Arquivos Úteis - Projeto 04 - Parrot Card Game/explodyparrot.gif'
+	"./imagens/fiestaparrot.gif",
+	"./imagens/metalparrot.gif",
+	"./imagens/revertitparrot.gif",
+	"./imagens/tripletsparrot.gif",
+	"./imagens/unicornparrot.gif",
+	"./imagens/bobrossparrot.gif",
+	"./imagens/explodyparrot.gif"
 ];
 
 const baralho = document.querySelector('ul');
@@ -29,16 +29,15 @@ const deck = [];
 let i =0;
 
 while(cont<(cartas/2)){
-
 	while(i<=1){
 		deck.push(
 		`<li>
 			<div class="cardclass" data-test='card'>
 	  			<div class="front-face face">
-					<image data-test="face-down-image" class="form_image" src="./Arquivos Úteis - Projeto 04 - Parrot Card Game//back.png">
+					<img data-test="face-down-image" class="form_image" src="./imagens/back.png">
 	  			</div>
 	  			<div class="back-face face">
-	  				<image data-test="face-up-image src="${imagemcarta[cont]}">
+	  				<img data-test="face-up-image src="${imagemcarta[cont]}">
 	  			</div>
 			</div>
   		</li>`);
