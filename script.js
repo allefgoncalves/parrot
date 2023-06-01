@@ -37,17 +37,16 @@ while(cont<(cartas/2)){
 					<img data-test="face-down-image" class="form_image" src="./imagens/back.png">
 	  			</div>
 	  			<div class="back-face face">
-	  				<img data-test="face-up-image src="${imagemcarta[cont]}">
+	  				<img data-test="face-up-image" src="${imagemcarta[cont]}">
 	  			</div>
 			</div>
   		</li>`);
 		i++;
-		console.log(imagemcarta[cont]);
 	}
 	i=0;
 	cont++;
 }
-console.log(deck);
+
 cont=0; 
 
 deck.sort(comparador);
@@ -55,6 +54,7 @@ deck.sort(comparador);
 function comparador() { 
 	return Math.random() - 0.5; 
 }
+
 
 //escreve a array deck no codigo html.
 
@@ -85,14 +85,14 @@ deck_aux.forEach((carta) => {
 		carta.classList.add("virada");
 		cont++;
 		segunda_escolha = carta;
-		setTimeout(comparador,1000,primeira_escolha,segunda_escolha);
+		setTimeout(compararPar,1000,primeira_escolha,segunda_escolha);
 		jogadas++;
 	  }
 	});
 })
-/*
 
-function comparador(a, b) {
+//mudar nome da função
+function compararPar(a, b) {
 	if (a.querySelector('.back-face>img').src === b.querySelector('.back-face>img').src) {
 	  cont = 0;
 	  a = '';
