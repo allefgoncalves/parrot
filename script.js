@@ -8,10 +8,13 @@ while(cont==1){
 		if(cartas<15){
 			if(cartas%2==0){
 				cont = 0;
+				timerjogo();
+				//bonus - chamada da função de tempo 	
 			}
 		}		
 	} 
 }
+
 //criaçção das cartas
 
 const imagemcarta = [
@@ -92,6 +95,8 @@ deck_aux.forEach((carta) => {
 })
 
 //mudar nome da função
+let finalizador=0;
+
 function compararPar(a, b) {
 	if (a.querySelector('.back-face>img').src === b.querySelector('.back-face>img').src) {
 	  cont = 0;
@@ -110,14 +115,32 @@ function compararPar(a, b) {
 	}
   }
 
-/*
-while(end<cartas){
-	//seleciona 1 carta
-	//seleciona 2 carta
-//	if(){ // se a carta1 == carta2
-//		//add a finalizado as cartas
-//		end +=2;
-//	}
-	
+// bonus
+function timerjogo(){
+	const minuto = document.querySelector('.min');
+	const segundo = document.querySelector('.seg');
+	let auxS=55;
+	let auxM=0;
+	setInterval(() => {
+		if(auxS<10){
+			segundo.innerHTML='0'+auxS;
+		}
+		else{
+			segundo.innerHTML=auxS;
+		}
+		if(auxS==60){
+			auxM++;
+			auxS=0;
+			segundo.innerHTML='00';
+			if(auxM<10){
+				minuto.innerHTML='0'+auxM;
+			}
+			else{
+				minuto.innerHTML=auxM;
+			}
+		}
+			auxS++;
+	},1000);
+		console.log(segundo);
+
 }
-*/
